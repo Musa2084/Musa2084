@@ -1,5 +1,6 @@
-![MasterHead](https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/4086801/cover_image/retina_1708x683/cover-0219-The10MistakesC-Waldek_img-2d52af9dc3b9ee755695dedfac0a9eab.png)
-
+<p align="center">
+  <img src="https://t3.ftcdn.net/jpg/05/84/71/02/360_F_584710266_SfbvOwOMvqpT1yPoJ7mZCZQOHqEHJOTN.jpg" alt="MasterHead" />
+</p>
 <h1 align="center">Hi 👋, I'm Musa Mahmudov</h1>
 <h3 align="center">A passionate Backend Developer specialized in .NET ecosystem.</h3>
 
