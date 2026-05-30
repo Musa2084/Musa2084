@@ -1,9 +1,12 @@
 <p align="center">
   <img src="https://t3.ftcdn.net/jpg/05/84/71/02/360_F_584710266_SfbvOwOMvqpT1yPoJ7mZCZQOHqEHJOTN.jpg" alt="MasterHead" />
 </p>
-<h1 align="center">Hi 👋, I'm Musa Mahmudov</h1>
-<h3 align="center">A passionate Backend Developer specialized in .NET ecosystem.</h3>
 
+<h1 align="center">Hi 👋, I'm Musa Mahmudov</h1>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1500&color=38BDF8&center=true&vCenter=true&width=600&height=50&lines=A+passionate+Backend+Developer;Specialized+in+.NET+Ecosystem;Building+Onion+Architecture+Projects;Writing+Clean+%26+Scalable+Code" alt="Typing SVG" />
+</p>
 - 🌱 I’m currently learning **Advanced .NET Core, Onion Architecture, and Clean Code principles.**
 - 💬 Ask me about **C#, ASP.NET Core, EF Core, and OOP concepts.**
 - 📫 How to reach me **mr.musa.mahmudov@mail.ru**
