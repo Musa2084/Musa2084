@@ -46,7 +46,6 @@
     </td>
   </tr>
 </table>
----
 
 ### 🐍 GitHub Contribution Snake:
 <p align="center">
