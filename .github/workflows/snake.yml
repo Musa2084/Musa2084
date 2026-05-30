@@ -1,14 +1,11 @@
-name: Generate Snake
+name: Generate Profile Visuals
 
 on:
   schedule:
-    # Hər 12 saatdan bir avtomatik yenilənir
+    # Hər 12 saatdan bir avtomatik işə düşür
     - cron: "0 */12 * * *"
   
-  # Actions tabından əllə başladılma icazəsi
-  workflow_dispatch:
-  
-  # main və ya master branch-ına hər push olanda işə düşür
+  workflow_dispatch: # Əllə başlatmaq üçün
   push:
     branches:
       - main
@@ -19,27 +16,40 @@ jobs:
     permissions: 
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     
     steps:
-      # Repozitoriyanı yoxlayır
+      # 1. Repozitoriyanı yoxlayır
       - uses: actions/checkout@v3
 
-      # İlan oyununu animasiya edir (Qaranlıq rejim üçün transparan SVG)
+      # 2. İlan Oyununu Yaradır
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: Musa2084
           outputs: |
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            stage/github-contribution-grid-snake-dark.svg?palette=github-dark
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      # Yaradılan şəffaf SVG faylını "output" branch-ına yükləyir
-      - name: push github-contribution-grid-snake.svg to the output branch
+
+      # 3. 3D Aktivlik Şəhərini Yaradır
+      - name: generate github-profile-3d-contrib
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: Musa2084
+
+      # 4. Yaradılan 3D fayllarını müvəqqəti qovluğa köçürür
+      - name: Move 3D files to stage
+        run: |
+          mkdir -p stage
+          cp -r profile-3d-contrib/* stage/
+
+      # 5. Hər iki vizualı birdən "output" branch-ına yükləyir
+      - name: push all visuals to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
-          build_dir: dist
+          build_dir: stage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
